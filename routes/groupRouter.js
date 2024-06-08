@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-    res.send('respond with a resource')
+    res.send('respond with some resource')
 })
 
 //Add Group router
@@ -21,7 +21,7 @@ router.post('/v1/user', controller.findUserGroup)
 router.post('/v1/edit', controller.editGroup)
 
 //Settlement Calculator router 
-router.post('/v1/settlement', controller.groupBalanceSheet)
+router.post('/v1/settlement', controller.settlement)
 
 //Make settlement router 
 router.post('/v1/makeSettlement', controller.makeSettlement)
