@@ -2,11 +2,7 @@ var mongoose = require('mongoose')
 var logger = require('../helper/logger')
 
 mongoose.connect(process.env.MONGODB_URI, 
-//     {
-//     maxPoolSize: 50,
-//     wtimeoutMS: 2500,
-//     useNewUrlParser: true
-// }
+
 ).then(() => {
     logger.info(`DB Connection Established`)
     console.log("DB Connected")
@@ -35,7 +31,7 @@ const User = new mongoose.Schema({
 })
 
 const Group = new mongoose.Schema({
-    groupName: {
+    groupID: {
         type: String,
         required: true
     },
@@ -67,7 +63,7 @@ const Group = new mongoose.Schema({
 })
 
 const Expense = new mongoose.Schema({
-    groupId: {
+    groupID: {
         type: String,
         required: true
     },
@@ -113,7 +109,7 @@ const Expense = new mongoose.Schema({
 })
 
 const Settlement = new mongoose.Schema({
-    groupId:{
+    groupID:{
         type: String,
         required: true
     },
