@@ -3,31 +3,19 @@ const validator = require('../helper/validation')
 const logger = require('../helper/logger')
 const splitCalculator = require('../helper/split')
 
-/*
-Create Group Function This function basically create new groups
-Accepts: Group Name
-         Group Description:
-         Group Members
-         Currency Type:
-Validation: Group Name not empty
-            Group Members present in DB
-            Currency type INR, USD, EUR (for now)
-*/
+
 exports.createGroup = async (req, res) => {
     try {
         var newGroup = new model.Group(req.body)
-        //Performing validation on the input
+       
         if (validator.notNull(newGroup.groupName) &&
             validator.currencyValidation(newGroup.groupCurrency)) {
 
-            /*
-            Split Json is used to store the user split value (how much a person owes)
-            When the Group is created all members are assigned the split value as 0    
-            */
+            
             var splitJson = {}
 
             for (var user of newGroup.groupMembers) {
-                //Validating the group Members exist in the DB 
+               
                 var memberCheck = await validator.userValidation(user)
                 if (!memberCheck) {
                     var err = new Error('Invalid member id')
@@ -39,10 +27,7 @@ exports.createGroup = async (req, res) => {
                 splitJson[user] = 0
             }
 
-            /*
-            Split Json will now contain an json with user email as the key and the split amount (currently 0) as the value
-            We now store this splitJson object to the newGroup model so it can be stored to DB directly
-            */
+           
             newGroup.split = splitJson
 
             //Validating the group Owner exist in the DB 
@@ -91,18 +76,13 @@ exports.viewGroup = async (req, res) => {
         })
     } catch(err) {
         logger.error(`URL : ${req.originalUrl} | staus : ${err.status} | message: ${err.message}`)
-        res.status(err.status || 500).json({
+        res.status(err.status || 600).json({
             message: err.message
         })
     }
 }
 
-/*
-Find all user group function
-This function is basically to display the list of group that a user belongs
-Accepts: user email ID
-Validation: email Id present in DB
-*/
+
 exports.findUserGroup = async (req, res) => {
     try {
         const user = await model.User.findOne({
@@ -110,7 +90,7 @@ exports.findUserGroup = async (req, res) => {
         })
         if (!user) {
             var err = new Error("User Id not found !")
-            err.status = 400
+            err.status = 500
             throw err
         }
         const groups = await model.Group.find({
@@ -130,12 +110,7 @@ exports.findUserGroup = async (req, res) => {
     }
 }
 
-/*
-Edit Group Function
-This function is to edit the already existing group to make changes.
-Accepts: Group Id
-        Modified group info
-*/
+
 exports.editGroup = async (req, res) => {
     try {
         var group = await model.Group.findOne({
