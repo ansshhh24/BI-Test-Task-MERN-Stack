@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>missing you ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --pink:#ff9ecb;
+    --pink-deep:#ff6fae;
+    --peach:#ffd6a5;
+    --cream:#fff5ee;
+    --plum:#3a2540;
+    --plum-2:#241329;
+    --glow:#ffb3d9;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+
+  html,body{ height:100%; }
+
+  body{
+    font-family:'Quicksand',system-ui,sans-serif;
+    color:var(--cream);
+    background:
+      radial-gradient(1200px 700px at 20% -10%, #5a2f5e 0%, transparent 60%),
+      radial-gradient(900px 600px at 110% 20%, #7a3a63 0%, transparent 55%),
+      radial-gradient(1000px 800px at 50% 120%, #4a2350 0%, transparent 60%),
+      linear-gradient(160deg, var(--plum) 0%, var(--plum-2) 100%);
+    min-height:100dvh;
+    overflow-x:hidden;
+    position:relative;
+    cursor:default;
+  }
+
+  /* soft drifting orbs of light */
+  .orb{ position:fixed; border-radius:50%; filter:blur(60px); opacity:.35; z-index:0; pointer-events:none; animation:drift 16s ease-in-out infinite; }
+  .orb.a{ width:260px; height:260px; background:var(--pink); top:8%; left:6%; }
+  .orb.b{ width:220px; height:220px; background:var(--peach); bottom:10%; right:8%; animation-delay:-6s; }
+  .orb.c{ width:180px; height:180px; background:var(--glow); top:55%; left:60%; animation-delay:-11s; }
+  @keyframes drift{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(20px,-26px) scale(1.08);} }
+
+  .wrap{
+    position:relative; z-index:2;
+    max-width:900px; margin:0 auto;
+    padding:48px 20px 90px;
+    display:flex; flex-direction:column; align-items:center;
+    text-align:center;
+  }
+
+  .kicker{
+    font-family:'Caveat',cursive;
+    font-size:clamp(22px,4vw,30px);
+    color:var(--peach);
+    opacity:.9;
+    transform:rotate(-3deg);
+    margin-bottom:6px;
+  }
+
+  /* THE headline */
+  .headline{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    line-height:.92;
+    font-size:clamp(74px,20vw,190px);
+    letter-spacing:1px;
+    background:linear-gradient(180deg,#fff 0%, var(--pink) 55%, var(--pink-deep) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 8px 30px rgba(255,111,174,.45));
+    margin:2px 0 4px;
+  }
+  .headline span{ display:inline-block; animation:float-letter 3.6s ease-in-out infinite; }
+  .headline .l2{ animation-delay:.15s; }
+  @keyframes float-letter{ 0%,100%{ transform:translateY(0) rotate(0);} 50%{ transform:translateY(-10px) rotate(-1.2deg);} }
+
+  .sub{
+    font-size:clamp(14px,2.6vw,18px);
+    color:#ffe6f2; opacity:.82; font-weight:500;
+    margin-bottom:34px;
+  }
+  .sub b{ color:var(--peach); }
+
+  /* photo stickers */
+  .gallery{
+    display:flex; gap:8px; flex-wrap:wrap; justify-content:center; align-items:center;
+    margin-bottom:14px; perspective:1000px;
+  }
+  .sticker{
+    position:relative; width:min(38vw,240px); aspect-ratio:1/1.08;
+    cursor:pointer; background:transparent; border:0; padding:0;
+    transform-style:preserve-3d; transition:transform .7s cubic-bezier(.2,.8,.2,1);
+    animation:sway 6s ease-in-out infinite;
+  }
+  .sticker.two{ animation-delay:-3s; }
+  .sticker:nth-child(1){ transform:rotate(-6deg); }
+  .sticker:nth-child(2){ transform:rotate(6deg); }
+  @keyframes sway{ 0%,100%{ translate:0 0;} 50%{ translate:0 -12px;} }
+
+  .sticker .face{
+    position:absolute; inset:0; backface-visibility:hidden;
+    border-radius:22px; overflow:hidden;
+    background:var(--cream);
+    padding:10px 10px 40px;
+    box-shadow:0 18px 40px rgba(0,0,0,.4), 0 0 0 6px #fff inset;
+    display:flex; flex-direction:column;
+  }
+  .sticker .face img{
+    width:100%; height:100%; object-fit:cover; border-radius:14px; display:block;
+  }
+  .sticker .cap{
+    position:absolute; bottom:8px; left:0; right:0;
+    font-family:'Caveat',cursive; font-size:22px; color:#c24d86; text-align:center;
+  }
+  /* back of sticker (flip) */
+  .sticker .back{
+    transform:rotateY(180deg);
+    background:linear-gradient(160deg,#fff 0%, #ffe9f3 100%);
+    align-items:center; justify-content:center; text-align:center;
+    padding:22px;
+  }
+  .sticker .back p{
+    font-family:'Caveat',cursive; font-size:clamp(20px,3.4vw,28px);
+    color:#b03d78; line-height:1.15;
+  }
+  .sticker.flipped{ transform:rotateY(180deg) !important; animation:none; }
+  /* little tape */
+  .sticker::before{
+    content:""; position:absolute; top:-10px; left:50%; translate:-50% 0;
+    width:64px; height:22px; background:rgba(255,214,165,.55);
+    border:1px solid rgba(255,255,255,.35); border-radius:3px;
+    transform:rotate(-4deg); backdrop-filter:blur(1px); z-index:3;
+  }
+
+  .hint{ font-family:'Caveat',cursive; color:var(--peach); font-size:18px; opacity:.75; margin:2px 0 30px; }
+
+  /* miss-o-meter */
+  .machine{
+    width:min(92vw,440px);
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:26px;
+    padding:22px 22px 26px;
+    backdrop-filter:blur(8px);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  }
+  .machine h2{
+    font-family:'Quicksand',sans-serif; font-weight:600; font-size:15px;
+    letter-spacing:.5px; color:#ffe6f2; opacity:.85; margin-bottom:14px;
+  }
+  .meter{
+    height:20px; border-radius:20px; background:rgba(0,0,0,.28);
+    overflow:hidden; box-shadow:inset 0 2px 6px rgba(0,0,0,.4); position:relative;
+  }
+  .meter .fill{
+    height:100%; width:0%;
+    background:linear-gradient(90deg,var(--peach),var(--pink),var(--pink-deep));
+    border-radius:20px; transition:width .12s linear;
+    box-shadow:0 0 18px var(--glow);
+  }
+  .readout{
+    font-family:'Caveat',cursive; font-size:34px; color:#fff; margin:10px 0 16px; min-height:40px;
+  }
+  .hold-btn{
+    font-family:'Quicksand',sans-serif; font-weight:700; font-size:18px;
+    color:#5a1f3d; border:0; cursor:pointer;
+    padding:15px 30px; border-radius:40px;
+    background:linear-gradient(180deg,#fff 0%, var(--pink) 100%);
+    box-shadow:0 10px 24px rgba(255,111,174,.5), 0 2px 0 rgba(255,255,255,.6) inset;
+    transition:transform .12s ease, box-shadow .12s ease;
+    user-select:none; touch-action:none;
+  }
+  .hold-btn:active{ transform:scale(.94); box-shadow:0 4px 14px rgba(255,111,174,.5); }
+  .hold-btn .heart{ display:inline-block; animation:beat 1s ease-in-out infinite; }
+  @keyframes beat{ 0%,100%{ transform:scale(1);} 25%{ transform:scale(1.25);} 40%{ transform:scale(1);} }
+
+  /* live counter */
+  .counter{ margin-top:34px; font-size:14px; color:#ffd9ea; opacity:.8; font-weight:500; }
+  .counter b{ font-family:'Caveat',cursive; font-size:26px; color:var(--peach); vertical-align:-3px; }
+
+  footer{ margin-top:40px; font-family:'Caveat',cursive; font-size:20px; color:#ffc6e0; opacity:.7; }
+
+  /* heart particles */
+  .heart-p{ position:fixed; z-index:40; pointer-events:none; font-size:20px; will-change:transform,opacity; }
+  @keyframes rise{
+    0%{ transform:translate(0,0) scale(.6) rotate(0); opacity:1; }
+    100%{ transform:translate(var(--dx), var(--dy)) scale(1.2) rotate(var(--r)); opacity:0; }
+  }
+
+  @media (max-width:520px){
+    .sticker::before{ width:48px; }
+    .wrap{ padding-top:34px; }
+  }
+</style>
+</head>
+<body>
+  <div class="orb a"></div>
+  <div class="orb b"></div>
+  <div class="orb c"></div>
+
+  <main class="wrap">
+    <p class="kicker">hey you… psst</p>
+    <h1 class="headline" aria-label="missing you">
+      <span class="l1">missing</span><br /><span class="l2">you</span>
+    </h1>
+    <p class="sub">every little second, just a <b>little</b> more 🫧</p>
+
+    <div class="gallery">
+      <button class="sticker one" type="button" aria-label="flip photo one">
+        <div class="face front">
+          <img src="photo1.jpg" alt="us being silly" />
+          <span class="cap">us, being us</span>
+        </div>
+        <div class="face back"><p>you + me =<br/>my favourite place ♡</p></div>
+      </button>
+      <button class="sticker two" type="button" aria-label="flip photo two">
+        <div class="face front">
+          <img src="photo2.jpg" alt="a little forehead kiss" />
+          <span class="cap">forehead kiss ☁︎</span>
+        </div>
+        <div class="face back"><p>come back soon,<br/>the hugs are piling up 🧸</p></div>
+      </button>
+    </div>
+    <p class="hint">↑ tap a photo ♡</p>
+
+    <section class="machine" aria-label="the miss-o-meter">
+      <h2>THE MISS-O-METER ✧</h2>
+      <div class="meter"><div class="fill" id="fill"></div></div>
+      <div class="readout" id="readout">how much do i miss you?</div>
+      <button class="hold-btn" id="holdBtn" type="button">hold me <span class="heart">🫶</span></button>
+    </section>
+
+    <p class="counter">since i last saw you: <b id="clock">counting…</b> of thinking about you</p>
+
+    <footer>made with too much love ♡</footer>
+  </main>
+
+<script>
+(function(){
+  // ---------- heart burst ----------
+  var EMOJIS = ['❤️','💕','💖','🩷','💗','🫶','✨','🌸'];
+  function burst(x, y, n){
+    n = n || 8;
+    for(var i=0;i<n;i++){
+      var s = document.createElement('span');
+      s.className = 'heart-p';
+      s.textContent = EMOJIS[(Math.random()*EMOJIS.length)|0];
+      s.style.left = x + 'px';
+      s.style.top = y + 'px';
+      var ang = Math.random()*Math.PI*2;
+      var dist = 60 + Math.random()*120;
+      s.style.setProperty('--dx', Math.cos(ang)*dist + 'px');
+      s.style.setProperty('--dy', (Math.sin(ang)*dist - 80) + 'px');
+      s.style.setProperty('--r', (Math.random()*160-80) + 'deg');
+      s.style.fontSize = (14 + Math.random()*18) + 'px';
+      s.style.animation = 'rise ' + (900 + Math.random()*700) + 'ms ease-out forwards';
+      document.body.appendChild(s);
+      setTimeout((function(el){return function(){ el.remove(); };})(s), 1700);
+    }
+  }
+  window.addEventListener('click', function(e){
+    // don't double-burst on the machine controls text; still fun everywhere
+    burst(e.clientX, e.clientY, 6);
+  });
+
+  // ---------- flip photos ----------
+  document.querySelectorAll('.sticker').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      btn.classList.toggle('flipped');
+      var r = btn.getBoundingClientRect();
+      burst(r.left + r.width/2, r.top + r.height/2, 10);
+    });
+  });
+
+  // ---------- miss-o-meter ----------
+  var fill = document.getElementById('fill');
+  var readout = document.getElementById('readout');
+  var btn = document.getElementById('holdBtn');
+  var pct = 0, raf = null, holding = false, overflowed = false;
+  var LINES = [
+    ['warming up…', 15],
+    ['quite a lot, actually 🙈', 35],
+    ['okay… a WHOLE lot 💞', 60],
+    ['more than the sky 🌌', 82],
+    ['off the charts!! 📈', 99]
+  ];
+  function label(){
+    if(overflowed){ readout.textContent = '∞  (still not enough) 🥺'; return; }
+    var t = 'how much do i miss you?';
+    for(var i=0;i<LINES.length;i++){ if(pct >= LINES[i][1]) t = LINES[i][0]; }
+    readout.textContent = t;
+  }
+  function step(){
+    if(!holding) return;
+    pct = Math.min(100, pct + 1.4);
+    fill.style.width = pct + '%';
+    label();
+    if(pct >= 100 && !overflowed){
+      overflowed = true; label();
+      var r = btn.getBoundingClientRect();
+      var cx = r.left + r.width/2, cy = r.top;
+      var reps = 0;
+      var boom = setInterval(function(){ burst(cx + (Math.random()*160-80), cy, 10); if(++reps>6) clearInterval(boom); }, 120);
+    }
+    raf = requestAnimationFrame(step);
+  }
+  function start(e){ if(e){ e.preventDefault(); } holding = true; if(!raf) step(); }
+  function stop(){
+    holding = false;
+    if(raf){ cancelAnimationFrame(raf); raf = null; }
+    if(!overflowed){
+      // gently drain back
+      var drain = setInterval(function(){
+        if(holding){ clearInterval(drain); return; }
+        pct = Math.max(0, pct - 2.5);
+        fill.style.width = pct + '%'; label();
+        if(pct <= 0) clearInterval(drain);
+      }, 40);
+    }
+  }
+  btn.addEventListener('mousedown', start);
+  btn.addEventListener('touchstart', start, {passive:false});
+  window.addEventListener('mouseup', stop);
+  window.addEventListener('touchend', stop);
+  btn.addEventListener('mouseleave', function(){ if(holding && !overflowed) stop(); });
+
+  // ---------- live "thinking about you" clock ----------
+  // starts now, just a playful ticker of togetherness-time
+  var start0 = Date.now();
+  var clock = document.getElementById('clock');
+  function two(n){ return (n<10?'0':'') + n; }
+  setInterval(function(){
+    var s = Math.floor((Date.now()-start0)/1000);
+    var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+    clock.textContent = two(h) + ':' + two(m) + ':' + two(sec);
+  }, 1000);
+
+  // gentle ambient hearts now and then
+  setInterval(function(){
+    burst(Math.random()*window.innerWidth, window.innerHeight - 4, 2);
+  }, 2600);
+})();
+</script>
+</body>
+</html>
