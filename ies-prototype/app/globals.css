@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: #f5f6f8;
+  color: #0e1726;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+}
+
+::selection {
+  background: #c7d2fe;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #d0d5dd;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, #dfe3ea 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 11.5px;
+  fill: #667085;
+}
+.recharts-tooltip-wrapper {
+  outline: none;
+}

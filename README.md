@@ -1,3 +1,5 @@
+> **IES Helm prototype (Intuit PM case study):** see [`ies-prototype/`](ies-prototype/README.md). It is a standalone Next.js app: `cd ies-prototype && npm install && npm run dev`.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
