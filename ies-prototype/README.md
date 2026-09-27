@@ -1,6 +1,6 @@
-# IES Helm: clickable prototype
+# Orbit: clickable prototype
 
-**IES Helm** is a product concept for evolving Intuit Enterprise Suite into an AI-native business platform for the mid-market. It aims to move IES from a *system of record* to a *system of action*: AI agents understand business context, recommend, act, bring in humans or experts when needed, and leave a complete audit trail.
+**Orbit** is a product concept for evolving Intuit Enterprise Suite into an AI-native business platform for the mid-market. It aims to move IES from a *system of record* to a *system of action*: AI agents understand business context, recommend, act, bring in humans or experts when needed, and leave a complete audit trail.
 
 > This is a case-study prototype. Every company, person, partner and number in it is fictional or illustrative, and the AI is simulated deterministically, so the demo behaves the same every time. See [`docs/ASSUMPTIONS.md`](docs/ASSUMPTIONS.md).
 

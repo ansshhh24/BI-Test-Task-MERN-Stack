@@ -1,6 +1,6 @@
-# IES Helm — product strategy
+# Orbit — product strategy
 
-> **IES Helm**: the AI operating layer for the mid-market. Agents that understand, decide and act, with you at the helm.
+> **Orbit**: the AI operating layer for the mid-market. Agents that understand, decide and act, with you at the center.
 
 ## 1. Problem
 
@@ -19,7 +19,7 @@ They also have no safe way to prove to a finance buyer that their agent is trust
 
 ## 2. Vision
 
-IES Helm turns Intuit Enterprise Suite from a **system of record** into a **system of action**. It becomes a trusted operating layer where AI agents, human experts and third-party developers work on one shared business context, and the finance leader stays at the helm.
+Orbit turns Intuit Enterprise Suite from a **system of record** into a **system of action**. It becomes a trusted operating layer where AI agents, human experts and third-party developers work on one shared business context, and the finance leader stays at the center.
 
 ## 3. Strategic pillars
 

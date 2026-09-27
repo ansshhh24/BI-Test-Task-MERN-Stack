@@ -20,7 +20,7 @@ export default function Strategy() {
     <div>
       <PageHeader
         eyebrow={<>Case Study Mode</>}
-        title="IES Helm — product strategy"
+        title="Orbit — product strategy"
         subtitle="The reasoning behind the prototype: the customer problem, the vision, how we would build and prove it, and how we would know it is working."
       />
       <div className="mb-3 flex flex-wrap items-center gap-3 text-[12px] text-ink-3">
@@ -150,7 +150,7 @@ export default function Strategy() {
           <Card>
             <table className="w-full text-[13px]">
               <thead className="border-b border-line text-left text-[11.5px] uppercase tracking-wider text-ink-3">
-                <tr><th className="px-5 py-2.5 font-medium">Differentiation axis</th><th className="px-3 py-2.5 font-medium">Hypothesis for IES Helm</th><th className="px-3 py-2.5 font-medium">Research needed</th>{COMPETITION.competitors.map((c) => <th key={c} className="px-2 py-2.5 text-center font-medium">{c}</th>)}</tr>
+                <tr><th className="px-5 py-2.5 font-medium">Differentiation axis</th><th className="px-3 py-2.5 font-medium">Hypothesis for Orbit</th><th className="px-3 py-2.5 font-medium">Research needed</th>{COMPETITION.competitors.map((c) => <th key={c} className="px-2 py-2.5 text-center font-medium">{c}</th>)}</tr>
               </thead>
               <tbody>
                 {COMPETITION.axes.map((a) => (

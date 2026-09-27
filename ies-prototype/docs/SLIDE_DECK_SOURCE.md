@@ -4,9 +4,9 @@ Every slide has a headline, its content and a prototype screen to capture. Scree
 
 ---
 
-### 1. Cover: IES Helm
-- **Headline:** IES Helm — the AI operating layer for the mid-market
-- **Sub:** From system of record to system of action. Agents that understand, decide and act, with you at the helm.
+### 1. Cover: Orbit
+- **Headline:** Orbit — the AI operating layer for the mid-market
+- **Sub:** From system of record to system of action. Agents that understand, decide and act, with you at the center.
 - **Include:** your name and a short bio, the prototype link, and a link to research evidence
 - **Visual:** landing page (`/`) with the animated agent loop
 

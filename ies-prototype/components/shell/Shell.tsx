@@ -20,11 +20,9 @@ export function Logo({ className, light }: { className?: string; light?: boolean
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden>
       <rect width="32" height="32" rx="9" fill={light ? '#fff' : '#0E1726'} />
-      <circle cx="16" cy="16" r="7.2" fill="none" stroke={light ? '#0E1726' : '#fff'} strokeWidth="2.2" />
-      <circle cx="16" cy="16" r="2.4" fill="#14A38B" />
-      {[0, 60, 120, 180, 240, 300].map((a) => (
-        <line key={a} x1="16" y1="5" x2="16" y2="9" stroke={light ? '#0E1726' : '#fff'} strokeWidth="2.2" strokeLinecap="round" transform={`rotate(${a} 16 16)`} />
-      ))}
+      <ellipse cx="16" cy="16" rx="10" ry="5" fill="none" stroke={light ? '#0E1726' : '#fff'} strokeWidth="1.8" transform="rotate(-30 16 16)" />
+      <circle cx="16" cy="16" r="3.6" fill={light ? '#0E1726' : '#fff'} />
+      <circle cx="23.3" cy="9.8" r="2.2" fill="#14A38B" />
     </svg>
   );
 }
@@ -182,7 +180,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             className="mx-auto flex h-9 w-full max-w-[460px] items-center gap-2.5 rounded-lg border border-line bg-slate-50 px-3 text-[13px] text-ink-3 transition hover:border-slate-300 hover:bg-white"
           >
             <Sparkles className="h-4 w-4 text-agent-600" />
-            <span className="flex-1 text-left">Ask Helm or give an agent a job…</span>
+            <span className="flex-1 text-left">Ask Orbit or give an agent a job…</span>
             <Kbd>⌘K</Kbd>
           </button>
 

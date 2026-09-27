@@ -29,7 +29,7 @@ export default function Vision() {
       <PageHeader
         eyebrow={<>The platform vision</>}
         title="One trusted operating layer for the mid-market"
-        subtitle="IES Helm connects businesses, AI agents, human experts and developers on a shared business context — so software that used to record the business can now understand it, decide, act and collaborate."
+        subtitle="Orbit connects businesses, AI agents, human experts and developers on a shared business context — so software that used to record the business can now understand it, decide, act and collaborate."
         right={<Link href="/strategy"><Button icon={<Presentation className="h-4 w-4" />}>Case study</Button></Link>}
       />
 

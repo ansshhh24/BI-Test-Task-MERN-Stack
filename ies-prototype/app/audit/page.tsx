@@ -28,7 +28,7 @@ export default function AuditLog() {
     const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'ies-helm-audit-log.csv';
+    a.download = 'orbit-audit-log.csv';
     a.click();
     URL.revokeObjectURL(url);
   };

@@ -1,4 +1,4 @@
-# Case traceability — IES Helm
+# Case traceability — Orbit
 
 Maps each requirement in the Intuit PM case brief to the product solution and the prototype screen that shows it.
 Routes are relative to the running app (e.g. `http://localhost:3000/close`).
@@ -7,7 +7,7 @@ Routes are relative to the running app (e.g. `http://localhost:3000/close`).
 
 | Case requirement | Product solution | Prototype screen |
 |---|---|---|
-| Evolve IES from an integrated suite to an AI-native business platform | IES Helm: a system of action. Agents, experts and developers share one business context, with a trust layer around it | `/` (landing), `/vision` |
+| Evolve IES from an integrated suite to an AI-native business platform | Orbit: a system of action. Agents, experts and developers share one business context, with a trust layer around it | `/` (landing), `/vision` |
 | Embed AI agents across finance, accounting, workforce and commerce | First-party agents: Close, Collections, Cash Forecast, Compliance, Spend, Workforce/Commerce insights | `/command-center`, `/workflows`, `/close`, `/compliance` |
 | Embed human + AI expert services | Expert Network with auto-built context packs, expert matching and apply-to-books | `/experts` |
 | Let third-party developers build AI-native apps, integrations and agents on IES data, APIs and tools | Semantic APIs, typed agent tool registry, Agent SDK, sandbox, Agent Studio, Test Lab, Publish | `/developer/*` |

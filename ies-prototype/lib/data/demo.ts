@@ -106,7 +106,7 @@ export const DEMO_STEPS: DemoStep[] = [
     route: '/vision',
     role: 'business',
     minutes: '1 min',
-    say: 'IES Helm: one trusted operating layer connecting businesses, agents, experts and developers — powered by a flywheel of shared context.',
+    say: 'Orbit: one trusted operating layer connecting businesses, agents, experts and developers — powered by a flywheel of shared context.',
     doThis: ['Walk the six platform layers', 'Close on the flywheel and roadmap'],
     moment: 'From system of record to system of action.',
   },

@@ -33,7 +33,7 @@ export const PROBLEMS = {
 };
 
 export const VISION =
-  'IES Helm turns Intuit Enterprise Suite from a system of record into a system of action: a trusted operating layer where AI agents, human experts and third-party developers work on one shared business context — and the finance leader stays at the helm.';
+  'Orbit turns Intuit Enterprise Suite from a system of record into a system of action: a trusted operating layer where AI agents, human experts and third-party developers work on one shared business context — and the finance leader stays at the center.';
 
 export const PILLARS = [
   { n: 1, name: 'Agentic Work', line: 'Agents do the work — close, collections, compliance — not just answer questions.', proof: 'Close Agent · Command Center' },

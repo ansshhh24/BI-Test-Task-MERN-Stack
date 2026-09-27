@@ -41,7 +41,7 @@ export default function Landing() {
           <div className="flex items-center gap-2.5">
             <Logo className="h-9 w-9" />
             <div>
-              <div className="text-[16px] font-semibold tracking-tight">IES Helm</div>
+              <div className="text-[16px] font-semibold tracking-tight">Orbit</div>
               <div className="text-[11.5px] text-ink-3">Intuit Enterprise Suite · product concept</div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function Landing() {
               to <span className="text-brand-600">system of action.</span>
             </h1>
             <p className="mt-5 max-w-[560px] text-[17px] leading-relaxed text-ink-2">
-              IES Helm puts AI agents, human experts and third-party developers on one trusted business context. Agents understand, decide and act — with evidence, policy and an audit trail — while finance leaders stay at the helm.
+              Orbit puts AI agents, human experts and third-party developers on one trusted business context. Agents understand, decide and act — with evidence, policy and an audit trail — while finance leaders stay at the center.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <button onClick={startDemo} className="flex h-12 items-center gap-2 rounded-xl bg-ink px-5 text-[15px] font-semibold text-white shadow-pop transition hover:bg-ink/90">

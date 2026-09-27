@@ -1,10 +1,10 @@
 // All company, people and financial data below is FICTIONAL demo data created for this prototype.
 
 export const PRODUCT = {
-  name: 'IES Helm',
-  full: 'Intuit Enterprise Suite · Helm',
+  name: 'Orbit',
+  full: 'Intuit Enterprise Suite · Orbit',
   tagline: 'The AI operating layer for the mid-market.',
-  promise: 'Agents that understand, decide and act — with you at the helm.',
+  promise: 'Agents that understand, decide and act — with you at the center.',
 };
 
 export const COMPANY = {

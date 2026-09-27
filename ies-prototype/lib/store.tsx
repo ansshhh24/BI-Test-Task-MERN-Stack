@@ -151,7 +151,7 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-const STORAGE_KEY = 'ies-helm-state-v1';
+const STORAGE_KEY = 'orbit-state-v1';
 
 export const USER = 'Maya Chen (CFO)';
 

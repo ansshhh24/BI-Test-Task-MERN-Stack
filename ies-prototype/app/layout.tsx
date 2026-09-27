@@ -6,7 +6,7 @@ import { StoreProvider } from '@/lib/store';
 import { Shell } from '@/components/shell/Shell';
 
 export const metadata: Metadata = {
-  title: 'IES Helm — AI-native business platform for the mid-market',
+  title: 'Orbit — AI-native business platform for the mid-market',
   description: 'Clickable prototype: Intuit Enterprise Suite evolves from a system of record into a system of action.',
 };
 
